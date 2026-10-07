@@ -3,12 +3,14 @@ import React, { useState } from "react";
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
+
     const navLinks = [
-        { name: "Home", href: "#home" },
-        { name: "About", href: "#about" },
-        { name: "My Skills", href: "#skills" },
-        { name: "Contact", href: "#contact" },
+        { name: "Home", href: "/" },
+        { name: "About", href: "/about" },
+        { name: "My Skills", href: "/skills" },
+        { name: "Contact", href: "/contact" },
     ];
+
 
     return (
         <nav className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-lg">
@@ -40,7 +42,7 @@ function Navbar() {
 
                 {/* Contact Button */}
                 <a
-                    href="#contact"
+                    href="/contact"
                     className="hidden rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white
                     transition duration-300 hover:bg-blue-500
                     hover:shadow-lg hover:shadow-blue-500/30 md:block"
@@ -75,7 +77,7 @@ function Navbar() {
                         ))}
 
                         <a
-                            href="#contact"
+                            href="/contact"
                             onClick={() => setIsOpen(false)}
                             className="mt-2 w-fit rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white
                             transition hover:bg-blue-500"

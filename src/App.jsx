@@ -1,4 +1,6 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./Navbar";
 
 import Home from "./Pages/Home";
@@ -11,23 +13,12 @@ function App() {
     <div className="min-h-screen bg-[#050505] text-white">
       <Navbar />
 
-      <main>
-        <section id="home">
-          <Home />
-        </section>
-
-        <section id="about">
-          <About />
-        </section>
-
-        <section id="skills">
-          <Skills />
-        </section>
-
-        <section id="contact">
-          <Contact />
-        </section>
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }
