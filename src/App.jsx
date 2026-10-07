@@ -1,23 +1,36 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Navbar from './Navbar'
-import Home from './Pages/Home'
-import About from './Pages/About'
-import Skills from './Pages/Skills'
-import Contact from './Pages/Contact'
+import React from "react";
+import Navbar from "./Navbar";
+
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Skills from "./Pages/Skills";
+import Contact from "./Pages/Contact";
 
 function App() {
   return (
-    <div>
+    <div className="min-h-screen bg-[#050505] text-white">
       <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/skills' element={<Skills />} />
-        <Route path='/contact' element={<Contact />} />
-      </Routes>
+
+      <main>
+        <section id="home">
+          <Home />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+

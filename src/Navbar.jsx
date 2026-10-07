@@ -4,10 +4,10 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
-        { name: "My Skills", href: "/skills" },
-        { name: "Contact", href: "/contact" },
+        { name: "Home", href: "#home" },
+        { name: "About", href: "#about" },
+        { name: "My Skills", href: "#skills" },
+        { name: "Contact", href: "#contact" },
     ];
 
     return (
@@ -16,7 +16,7 @@ function Navbar() {
 
                 {/* Logo */}
                 <a
-                    href="/"
+                    href="#home"
                     className="text-3xl font-bold tracking-wide text-white"
                 >
                     Raj<span className="text-blue-500">.</span>
@@ -29,9 +29,9 @@ function Navbar() {
                             key={link.name}
                             href={link.href}
                             className="relative text-lg font-medium text-gray-300 transition duration-300 hover:text-white
-              after:absolute after:-bottom-2 after:left-0 after:h-[2px] after:w-0
-              after:bg-blue-500 after:transition-all after:duration-300
-              hover:after:w-full"
+                            after:absolute after:-bottom-2 after:left-0 after:h-[2px]
+                            after:w-0 after:bg-blue-500 after:transition-all
+                            after:duration-300 hover:after:w-full"
                         >
                             {link.name}
                         </a>
@@ -40,9 +40,10 @@ function Navbar() {
 
                 {/* Contact Button */}
                 <a
-                    href="/contact"
+                    href="#contact"
                     className="hidden rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white
-          transition duration-300 hover:bg-blue-500 hover:shadow-lg hover:shadow-blue-500/30 md:block"
+                    transition duration-300 hover:bg-blue-500
+                    hover:shadow-lg hover:shadow-blue-500/30 md:block"
                 >
                     Let's Talk
                 </a>
@@ -61,6 +62,7 @@ function Navbar() {
             {isOpen && (
                 <div className="border-t border-white/10 bg-black/95 px-6 py-6 md:hidden">
                     <div className="flex flex-col gap-5">
+
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
@@ -73,12 +75,14 @@ function Navbar() {
                         ))}
 
                         <a
-                            href="/contact"
+                            href="#contact"
                             onClick={() => setIsOpen(false)}
-                            className="mt-2 w-fit rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-500"
+                            className="mt-2 w-fit rounded-full bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white
+                            transition hover:bg-blue-500"
                         >
                             Let's Talk
                         </a>
+
                     </div>
                 </div>
             )}
